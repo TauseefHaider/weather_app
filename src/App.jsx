@@ -1,5 +1,5 @@
 import { useState } from "react";
-import bg from "./assets/a1.jpg";
+import bg from "./assets/ass.jpg";
 import Button from "./compunents/Button";
 import Input from "./compunents/Input";
 import BottomDiv from "./compunents/BottomDiv";
@@ -32,7 +32,7 @@ function App() {
               className="w-[65px] h-[62px]"
             />
             <h1 className="text-white font-bold text-5xl mb-1">
-              {weather?.data?.current?.temp_c}
+              {weather?.data?.current?.temp_c}° C
             </h1>
             <p className="font-semibold text-white">
               {weather?.data?.location?.name}, {weather?.data?.location?.region}{" "}
