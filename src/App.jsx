@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import bg from "./assets/ass.jpg";
 import Button from "./compunents/Button";
 import Input from "./compunents/Input";
@@ -9,6 +9,10 @@ import { useContext } from "react";
 function App() {
   const weather = useContext(UserContext);
   console.log("weather", weather);
+
+  useEffect(() => {
+    weather.fetchDataForLocation();
+  }, []);
 
   return (
     <div className="h-lvh ">
@@ -27,10 +31,6 @@ function App() {
             </div>
           </div>
           <div className="flex flex-col">
-            <img
-              src={weather?.data?.current?.condition?.icon}
-              className="w-[65px] h-[62px]"
-            />
             <h1 className="text-white font-bold text-5xl mb-1">
               {weather?.data?.current?.temp_c}° C
             </h1>
